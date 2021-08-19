@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Laravel+Vue Crud Starter
 
@@ -92,3 +93,7 @@ This repository is motivated by [Hujjat/laravStart](https://github.com/Hujjat/la
 ## License
 
 [MIT license](https://opensource.org/licenses/MIT).
+=======
+# bs_one
+Proyecto dedicado al control de la cartera y seguimiento de clientes
+>>>>>>> ad027395720553817ac6d53fb4fb1ada13114c78

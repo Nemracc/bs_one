@@ -49,140 +49,10 @@
                   role="tabpanel"
                   aria-labelledby="tab-carga-clientes"
                 >
-                  <form @submit.prevent="frmCliente.cli_codigo = '' ? createCliente(): updateCliente()"
+                  <form
+                    @submit.prevent="frmCliente.cli_codigo = ''? createCliente(): updateCliente()"
                   >
                     <div class="card m-0">
-                      <!-- Datos principales del cliente -->
-                      <div class="card-header">
-                        <!-- Datos Cabecera -->
-                        <div class="row">
-                          <div class="col-4">
-                            <!-- Columna 1 -->
-                            <div class="input-group input-group-sm row">
-                              <label
-                                for="cli_nombres"
-                                class="col-sm-4 col-form-label smallxs"
-                                >Nombre</label
-                              >
-                              <input
-                                v-model="frmCliente.cli_nombres"
-                                type="text"
-                                name="cli_nombres"
-                                class="form-control col-sm-10 smallxs"
-                                :class="{
-                                  'is-invalid':
-                                    frmCliente.errors.has('cli_nombres'),
-                                }"
-                              />
-                              <has-error
-                                :form="frmCliente"
-                                field="cli_nombres"
-                              ></has-error>
-                            </div>
-                            <div class="input-group input-group-sm row">
-                              <label
-                                for="cli_apellidos"
-                                class="col-sm-4 col-form-label smallxs"
-                                >Apellido</label
-                              >
-                              <input
-                                v-model="frmCliente.cli_apellidos"
-                                type="text"
-                                name="cli_apellidos"
-                                class="form-control col-sm-10 smallxs"
-                                :class="{
-                                  'is-invalid':
-                                    frmCliente.errors.has('cli_apellidos'),
-                                }"
-                              />
-                              <has-error
-                                :form="frmCliente"
-                                field="cli_apellidos"
-                              ></has-error>
-                            </div>
-                          </div>
-                          <div class="col-4">
-                            <!-- Columna 2 -->
-                            <div class="input-group input-group-sm row">
-                              <label
-                                for="cli_ruc"
-                                class="col-sm-4 col-form-label smallxs"
-                                >RUC</label
-                              >
-                              <input
-                                v-model="frmCliente.cli_ruc"
-                                type="text"
-                                name="cli_ruc"
-                                class="form-control col-sm-10 smallxs"
-                                :class="{
-                                  'is-invalid':
-                                    frmCliente.errors.has('cli_ruc'),
-                                }"
-                              />
-                              <has-error
-                                :form="frmCliente"
-                                field="cli_ruc"
-                              ></has-error>
-                            </div>
-                            <div class="input-group input-group-sm row">
-                              <label
-                                for="cli_mail"
-                                class="col-sm-4 col-form-label smallxs"
-                                >E-Mail</label
-                              >
-                              <input
-                                v-model="frmCliente.cli_mail"
-                                type="text"
-                                name="cli_mail"
-                                class="form-control col-sm-10 smallxs"
-                                :class="{
-                                  'is-invalid':
-                                    frmCliente.errors.has('cli_mail'),
-                                }"
-                              />
-                              <has-error
-                                :form="frmCliente"
-                                field="cli_mail"
-                              ></has-error>
-                            </div>
-                          </div>
-                          <div class="col-4">
-                            <!-- Columna 3 -->
-                            <div class="input-group input-group-sm row">
-                              <label
-                                for="cli_sexo"
-                                class="col-sm-4 col-form-label smallxs"
-                                >Sexo</label
-                              >
-                              <select
-                                name="cli_sexo"
-                                class="
-                                  form-control form-control-sm
-                                  col-10
-                                  smallxs
-                                "
-                                v-model="frmCliente.cli_sexo"
-                              >
-                                <option
-                                  v-for="sexo in sexoLista"
-                                  v-bind:value="sexo.value"
-                                  v-bind:key="sexo.value"
-                                >
-                                  {{ sexo.text }}
-                                </option>
-                              </select>
-                            </div>
-                            <div class="input-group input-group-sm row">
-                              <label
-                                for="cli_telefono"
-                                class="col-sm-3 col-form-label smallxs"
-                              >
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Datos principales del cliente -->
                       <div class="card-body p-0">
                         <div class="row pb-0">
                           <div class="col-12 pb-0 pt-0">
@@ -192,12 +62,12 @@
                                 m-0
                               "
                             >
-                            <!-- Tabs General, Actividades, documentos... -->
+                              <!-- Tabs General, Actividades, documentos... -->
                               <tab2TabsDatos></tab2TabsDatos>
                               <!-- Tabs -->
                               <div
                                 class="card-body pt-1 pb-1 m-0"
-                                style="height: 210px; overflow-y: auto"
+                                style="height: 300px; overflow-y: auto"
                               >
                                 <div
                                   class="tab-content"
@@ -210,8 +80,155 @@
                                     role="tabpanel"
                                     aria-labelledby="tab-general-tab"
                                   >
-                                    <!-- Datos Generales -->
+                                    <!-- Datos Cabecera -->
+                                    <div
+                                      class="
+                                        row
+                                        border border-gray
+                                        rounded
+                                        p-2
+                                        bg-light-grey
+                                      "
+                                    >
+                                      <div class="col-4 m-0 p-0">
+                                        <!-- Columna 1 -->
+                                        <div class="input-group m-0 p-0">
+                                          <div class="form-group col-10 m-0">
+                                            <label class="m-0">Nombre</label>
+                                            <input
+                                              v-model="frmCliente.cli_nombres"
+                                              type="text"
+                                              name="cli_nombres"
+                                              class="
+                                                form-control form-control-sm
+                                                mb-1
+                                              "
+                                              :class="{
+                                                'is-invalid':
+                                                  frmCliente.errors.has(
+                                                    'cli_nombres'
+                                                  ),
+                                              }"
+                                            />
+                                            <has-error
+                                              :form="frmCliente"
+                                              field="cli_nombres"
+                                            ></has-error>
+                                          </div>
 
+                                          <div class="form-group col-10 m-0">
+                                            <label class="m-0">Apellido</label>
+                                            <input
+                                              v-model="frmCliente.cli_apellidos"
+                                              type="text"
+                                              name="cli_apellidos"
+                                              class="
+                                                form-control form-control-sm
+                                                mb-1
+                                              "
+                                              :class="{
+                                                'is-invalid':
+                                                  frmCliente.errors.has(
+                                                    'cli_apellidos'
+                                                  ),
+                                              }"
+                                            />
+                                            <has-error
+                                              :form="frmCliente"
+                                              field="cli_apellidos"
+                                            ></has-error>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-4 m-0 p-0">
+                                        <!-- Columna 2 -->
+                                        <div class="input-group m-0 p-0">
+                                          <div class="form-group col-10 m-0">
+                                            <label class="m-0">RUC</label>
+                                            <input
+                                              v-model="frmCliente.cli_ruc"
+                                              type="text"
+                                              name="cli_ruc"
+                                              class="
+                                                form-control form-control-sm
+                                                mb-1
+                                              "
+                                              :class="{
+                                                'is-invalid':
+                                                  frmCliente.errors.has(
+                                                    'cli_ruc'
+                                                  ),
+                                              }"
+                                            />
+                                            <has-error
+                                              :form="frmCliente"
+                                              field="cli_ruc"
+                                            ></has-error>
+                                          </div>
+
+                                          <div class="form-group col-10 m-0">
+                                            <label class="m-0">E-Mail</label>
+                                            <input
+                                              v-model="frmCliente.cli_mail"
+                                              type="text"
+                                              name="cli_mail"
+                                              class="
+                                                form-control form-control-sm
+                                                mb-1
+                                              "
+                                              :class="{
+                                                'is-invalid':
+                                                  frmCliente.errors.has(
+                                                    'cli_mail'
+                                                  ),
+                                              }"
+                                            />
+                                            <has-error
+                                              :form="frmCliente"
+                                              field="cli_mail"
+                                            ></has-error>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-4 m-0 p-0">
+                                        <!-- Columna 3 -->
+                                        <div class="input-group m-0 p-0">
+                                          <div class="form-group col-10 m-0">
+                                            <label for="cli_sexo" class="m-0"
+                                              >Sexo</label
+                                            >
+                                            <select
+                                              name="cli_sexo"
+                                              class="
+                                                form-control form-control-sm
+                                                mb-1
+                                              "
+                                              v-model="frmCliente.cli_sexo"
+                                            >
+                                              <option
+                                                v-for="sexo in sexoLista"
+                                                v-bind:value="sexo.value"
+                                                v-bind:key="sexo.value"
+                                              >
+                                                {{ sexo.text }}
+                                              </option>
+                                            </select>
+                                          </div>
+
+                                          <label
+                                            for="cli_telefono"
+                                            class="
+                                              col-sm-3 col-form-label
+                                              smallxs
+                                            "
+                                          >
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!-- Datos Cabecera -->
+
+                                    <!-- Datos Generales -->
                                     <span class="badge badge-primary"
                                       >Datos laborales</span
                                     >
@@ -224,7 +241,7 @@
                                         bg-light-grey
                                       "
                                     >
-                                      <div class="col-6 m-0 p-0 pl-2">
+                                      <div class="col-4 m-0 p-0 pl-2">
                                         <div class="input-group m-0 p-0">
                                           <div class="form-group col-10 m-0">
                                             <label class="m-0"
@@ -252,6 +269,12 @@
                                               name="cli_localidad_laboral"
                                             />
                                           </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- {{-- Segunda columna --}} -->
+                                      <div class="col-4 m-0 p-0">
+                                        <div class="input-group m-0 p-0">
                                           <div class="form-group col-10 m-0">
                                             <label class="m-0"
                                               >Nombre de la empresa:</label
@@ -265,12 +288,7 @@
                                               name="cli_nombre_empresa_laboral"
                                             />
                                           </div>
-                                        </div>
-                                      </div>
 
-                                      <!-- {{-- Segunda columna --}} -->
-                                      <div class="col-6 m-0 p-0">
-                                        <div class="input-group m-0 p-0">
                                           <div class="form-group col-10 m-0">
                                             <label class="m-0"
                                               >Encargado de pago:</label
@@ -284,6 +302,11 @@
                                               name="cli_encargado_pago"
                                             />
                                           </div>
+                                        </div>
+                                      </div>
+                                      <!-- {{-- Tercera columna --}} -->
+                                      <div class="col-4 m-0 p-0">
+                                        <div class="input-group m-0 p-0">
                                           <div class="form-group col-10 m-0">
                                             <label class="m-0">Cargo:</label>
                                             <input
@@ -322,7 +345,7 @@
                                         bg-light-grey
                                       "
                                     >
-                                      <div class="col-6 m-0 p-0">
+                                      <div class="col-4 m-0 p-0">
                                         <div class="input-group m-0 p-0">
                                           <div class="form-group col-10 m-0">
                                             <label class="m-0"
@@ -350,6 +373,12 @@
                                               name="cli_localidad"
                                             />
                                           </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- {{-- Segunda columna --}} -->
+                                      <div class="col-4 m-0 p-0">
+                                        <div class="input-group m-0 p-0">
                                           <div class="form-group col-10 m-0">
                                             <label class="m-0">Telefono:</label>
                                             <input
@@ -362,12 +391,7 @@
                                               v-model="frmCliente.cli_telefono2"
                                             />
                                           </div>
-                                        </div>
-                                      </div>
 
-                                      <!-- {{-- Segunda columna --}} -->
-                                      <div class="col-6 m-0 p-0">
-                                        <div class="input-group m-0 p-0">
                                           <div class="form-group col-10 m-0">
                                             <label class="m-0"
                                               >Encargado de pago:</label
@@ -381,6 +405,12 @@
                                               name="cli_direccion_laboral"
                                             />
                                           </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- {{-- Tercera columna --}} -->
+                                      <div class="col-4 m-0 p-0">
+                                        <div class="input-group m-0 p-0">
                                           <div class="form-group col-10 m-0">
                                             <label class="m-0">Cargo:</label>
                                             <input
@@ -409,6 +439,7 @@
                                     <!-- Datos Generales -->
                                   </div>
                                   <!-- Datos Generales -->
+
                                   <!-- Actividades Cobranza -->
                                   <div
                                     class="tab-pane fade"
@@ -438,6 +469,7 @@
                                     <!-- Actividades Cobranza -->
                                   </div>
                                   <!-- Actividades Cobranza -->
+
                                   <!-- Documentos -->
                                   <div
                                     class="tab-pane fade"
@@ -453,7 +485,7 @@
                                           d-flex
                                           justify-content-end
                                         "
-                                      >  
+                                      >
                                         <!-- </button> -->
                                         <input
                                           type="file"
@@ -464,7 +496,9 @@
                                           @change="select_file"
                                         />
                                       </div>
-                                      <listaDocumentos :documentos="documentos"></listaDocumentos>
+                                      <listaDocumentos
+                                        :documentos="documentos"
+                                      ></listaDocumentos>
                                     </div>
                                     <!-- Documentos -->
                                   </div>

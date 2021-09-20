@@ -496,16 +496,30 @@
                                       <!-- Documentos -->
                                     </div>
                                     <!-- Documentos -->
+
+                                    <!-- Contactos -->
+                                    <div
+                                      class="tab-pane fade"
+                                      id="tab-contactos"
+                                      role="tabpanel"
+                                      aria-labelledby="tab-mapa-contactos"
+                                    >
+
+                                    </div>
+                                    <!-- Contactos -->
+
+                                     <!-- mapa -->
                                     <div
                                       class="tab-pane fade"
                                       id="tab-mapa"
                                       role="tabpanel"
                                       aria-labelledby="tab-mapa-tab"
                                     >
-                                      <!-- mapa -->
+                                     
                                       <div id="map"></div>
-                                      <!-- mapa -->
                                     </div>
+                                      <!-- mapa -->
+
                                   </div>
                                 </div>
                                 <!-- /.card -->

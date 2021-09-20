@@ -43,6 +43,19 @@
       <li class="nav-item">
         <a
           class="nav-link"
+          id="tab-contactos-tab"
+          data-toggle="pill"
+          href="#tab-contactos"
+          role="tab"
+          aria-controls="tab-contactos"
+          aria-selected="false"
+          >Contactos</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
           id="tab-mapa-tab"
           data-toggle="pill"
           href="#tab-mapa"
